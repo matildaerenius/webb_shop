@@ -30,7 +30,7 @@ async function loadProducts() {
      // Loopa igenom produkterna
      products.forEach(product => {
          const col = document.createElement("div");
-         col.classList.add("col");
+         col.classList.add("col-auto");
          
          col.innerHTML = `
            <div class="card product-card flip-card d-flex flex-column">
