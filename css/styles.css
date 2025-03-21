@@ -10886,7 +10886,7 @@ textarea.form-control-lg {
 
 /* === Flip-funktioen === */
 .flip-card {
-  width: 280px;
+  width: 300px;
   height: 400px; 
   perspective: 1000px;
   cursor: pointer;
