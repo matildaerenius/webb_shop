@@ -68,10 +68,56 @@
       <div class="container px-4 px-lg-5 mt-5">
         <div
           class="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content-center" id="product-list">
-
         </div>
       </div>
     </section>
+      <!-- Order Product Modal MATILDAS HTML KOD -->
+<div class="modal fade" id="orderProductModal" tabindex="-1" aria-labelledby="orderProductModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="orderProductModalLabel">Beställ Produkt</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Stäng"></button>
+      </div>
+      <div class="modal-body">
+        <!-- Produktinformation -->
+        <div id="modalProductDetails" class="text-center mb-3">
+          <img src="" id="modalProductImage" alt="" class="img-fluid mb-2" style="max-height: 150px;">
+          <h4 id="modalProductTitle"></h4>
+          <p id="modalProductPrice"></p>
+        </div>
+        <!-- Orderformulär -->
+        <form id="orderProductForm" novalidate>
+          <div class="mb-3">
+            <label for="orderName" class="form-label">Namn</label>
+            <input type="text" class="form-control" id="orderName" required>
+            <div class="invalid-feedback">Ange ett namn mellan 2 och 50 tecken.</div>
+          </div>
+          <div class="mb-3">
+            <label for="orderEmail" class="form-label">E-post</label>
+            <input type="email" class="form-control" id="orderEmail" required>
+            <div class="invalid-feedback">Ange en giltig e-post (max 50 tecken).</div>
+          </div>
+          <div class="mb-3">
+            <label for="orderPhone" class="form-label">Telefon</label>
+            <input type="text" class="form-control" id="orderPhone" required>
+            <div class="invalid-feedback">Ange ett giltigt telefonnummer (max 50 tecken).</div>
+          </div>
+          <div class="mb-3">
+            <label for="orderAddress" class="form-label">Leveransadress</label>
+            <input type="text" class="form-control" id="orderAddress" required>
+            <div class="invalid-feedback">Ange en adress mellan 2 och 50 tecken.</div>
+          </div>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Avbryt</button>
+        <button type="button" class="btn btn-primary" id="submitOrderButton">Skicka beställning</button>
+      </div>
+    </div>
+  </div>
+</div>
+
     <!-- Footer-->
     <footer class="py-5 bg-dark">
       <div class="container">

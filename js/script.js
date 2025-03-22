@@ -26,6 +26,7 @@ function getProducts() {
                       <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
                           <div class="text-center">
                           <button class="btn btn-outline-dark mt-auto btn-buy" type="button"> Köp</button>
+                        
                           </div>
                       </div>
                   </div>
@@ -46,8 +47,13 @@ function addEventlistner(){
   buttons.forEach(button => {
     button.addEventListener('click', function(){
       alert("klickad produkt" + button.closest('.card').querySelector('.card-title').textContent);
+     
     });
   });
+}
+
+function openForm(){
+  
 }
 
 
