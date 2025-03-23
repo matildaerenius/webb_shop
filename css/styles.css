@@ -10881,7 +10881,7 @@ textarea.form-control-lg {
 .card-price {
   font-size: 18px;
   font-weight: bold;
-  color: #007bff;
+  color: #0056b3;
 }
 
 /* === Flip-funktioen === */
@@ -10917,14 +10917,15 @@ textarea.form-control-lg {
   transform: rotateY(180deg);
 }
 .btn-yellow {
-  background-color: #ffc107; 
-  border-color: #ffc107;    
-  color: #000;              
+  background-color: #0056b3; 
+  border-color: #000;;    
+  color: #fff;              
 }
 
 .btn-yellow:hover,
 .btn-yellow:focus {
-  background-color: #e0a800;
-  border-color: #d39e00;
+  background-color: #0056b6;
+  transform: scale(1.05);
+  border-color: #000;
   color: #000;
 }
