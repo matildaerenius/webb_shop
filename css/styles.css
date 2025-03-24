@@ -10956,6 +10956,11 @@ textarea.form-control-lg {
   border-color: #000;
   color: #000;
 }
+.receipt-image {
+  max-width: 300px; 
+  height: auto;     
+}
+
 
 /* === Contact-section === */
 a {

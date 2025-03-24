@@ -52,7 +52,8 @@ async function loadProducts() {
                  data-product-id="${product.id}"
                  data-product-title="${product.title}"
                  data-product-price="${product.price}"
-                 data-product-image="${product.image}">
+                 data-product-image="${product.image}"
+                 data-product-description="${product.description}">
                  Köp
                </button>
              </div>
@@ -86,10 +87,12 @@ const button = event.relatedTarget;
 const productTitle = button.getAttribute('data-product-title');
 const productPrice = button.getAttribute('data-product-price');
 const productImage = button.getAttribute('data-product-image');
+const productDescription = button.getAttribute('data-product-description');
 
 document.getElementById('modalProductTitle').textContent = productTitle;
-document.getElementById('modalProductPrice').textContent = "Pris: $" + productPrice;
+document.getElementById('modalProductPrice').textContent = "$" + productPrice;
 document.getElementById('modalProductImage').src = productImage;
+document.getElementById('modalProductDescription').textContent = productDescription;
 });
 
 
@@ -103,12 +106,12 @@ const orderEmail = document.getElementById('orderEmail');
 const orderPhone = document.getElementById('orderPhone');
 const orderAddress = document.getElementById('orderAddress');
 
-
+// Tar bort tidigare felmarkeringar
 [orderName, orderEmail, orderPhone, orderAddress].forEach(input => {
  input.classList.remove('is-invalid');
 });
 
-
+// Validering av fälten
 if (orderName.value.trim().length < 2 || orderName.value.trim().length > 50) {
  orderName.classList.add('is-invalid');
  valid = false;
@@ -129,13 +132,36 @@ if (orderAddress.value.trim().length < 2 || orderAddress.value.trim().length > 5
 
 if (valid) {
  
- alert("Tack! Din beställning är mottagen.");
+  // Hämtar produktdata från modalen
+  const productTitle = document.getElementById('modalProductTitle').textContent;
+  const productPrice = document.getElementById('modalProductPrice').textContent;
+  const productImage = document.getElementById('modalProductImage').src;
+  const productDescription = document.getElementById('modalProductDescription').textContent;
+
+  // Skapar ett objekt med all data på kvittot
+  const receiptData = {
+    title: productTitle,
+    price: productPrice,
+    image: productImage,
+    description: productDescription,
+    orderName: orderName.value.trim(),
+    orderEmail: orderEmail.value.trim(),
+    orderPhone: orderPhone.value.trim(),
+    orderAddress: orderAddress.value.trim()
+  };
+
+  // Sparar datan i sessionStorage (datan finns kvar tills fliken stängs)
+  sessionStorage.setItem("receiptData", JSON.stringify(receiptData));
  
+  // Stänger modalen
  const modalEl = document.getElementById('orderProductModal');
  const modal = bootstrap.Modal.getInstance(modalEl);
- modal.hide();
+ modal.hide(); 
  
- form.reset();
+ form.reset(); 
+
+ // Omdirigerar till kvitto-sidan
+ window.location.href = "receipt.html";
 }
 });
 
