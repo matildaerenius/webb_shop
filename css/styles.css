@@ -10956,3 +10956,10 @@ textarea.form-control-lg {
   border-color: #000;
   color: #000;
 }
+
+/* === Contact-section === */
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
