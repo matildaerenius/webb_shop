@@ -39,23 +39,12 @@ async function loadProducts() {
                  <img src="${product.image}" class="card-img-top" alt="${product.title}">
                  <h5 class="card-title">${product.title}</h5>
                  <p class="card-price">$${product.price}</p>
-               
-                 <!-- <button type="button" class="btn btn-yellow mt-2 order-button" 
-                   data-bs-toggle="modal" 
-                   data-bs-target="#orderProductModal"
-                   data-product-id="${product.id}"
-                   data-product-title="${product.title}"
-                   data-product-price="${product.price}"
-                   data-product-image="${product.image}">
-                   Beställ
-                 </button> -->
                </div>
                <div class="flip-card-back">
                  <h5 class="card-title">${product.title}</h5>
                  <p class="card-description">${product.description}</p>
                </div>
              </div>
-            
              <div class="p-2 mt-auto">
                <button type="button" class="btn btn-yellow order-button" 
                  data-bs-toggle="modal" 
