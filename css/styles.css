@@ -10827,6 +10827,33 @@ textarea.form-control-lg {
 
 
 
+/* === Navbar === */
+.navbar-nav .nav-link {
+  color: #000;
+  font-size: 16px;
+  text-transform: capitalize;
+  transition: color 0.3s ease;
+  position: relative;
+  padding: 7px 20px;
+  font-weight: 400;
+}
+.navbar-nav .nav-link::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -3px;
+  width: 0;
+  height: 3px;
+  background: #000;
+  transition: width 0.3s ease;
+}
+.navbar-nav .nav-link:hover::after {
+  width: 100%;
+}
+.navbar-nav .nav-link:hover {
+  color: #000
+}
+
 /* === Produkter === */
 .product-card {
   background-color: #fff598;

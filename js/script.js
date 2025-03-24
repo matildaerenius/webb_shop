@@ -53,7 +53,7 @@ async function loadProducts() {
                  data-product-title="${product.title}"
                  data-product-price="${product.price}"
                  data-product-image="${product.image}">
-                 Beställ
+                 Köp
                </button>
              </div>
            </div>
