@@ -104,12 +104,12 @@ let valid = true;
 const orderName = document.getElementById('orderName');
 const orderEmail = document.getElementById('orderEmail');
 const orderPhone = document.getElementById('orderPhone');
-const orderAddress = document.getElementById('orderAddress');
-const orderPostCode = document.getElementById('orderPostCode');
+const orderStreet = document.getElementById('orderStreet');
+const orderZipCode = document.getElementById('orderZipCode');
 const orderCity = document.getElementById('orderCity');
 
 // Tar bort tidigare felmarkeringar
-[orderName, orderEmail, orderPhone, orderAddress, orderPostCode,orderCity].forEach(input => {
+[orderName, orderEmail, orderPhone, orderStreet, orderZipCode, orderCity].forEach(input => {
  input.classList.remove('is-invalid');
 });
 
@@ -127,13 +127,13 @@ if (!phoneRegex.test(orderPhone.value) || orderPhone.value.trim().length > 50) {
  orderPhone.classList.add('is-invalid');
  valid = false;
 }
-if (orderAddress.value.trim().length < 2 || orderAddress.value.trim().length > 50) {
- orderAddress.classList.add('is-invalid');
+if (orderStreet.value.trim().length < 2 || orderStreet.value.trim().length > 50) {
+  orderStreet.classList.add('is-invalid');
  valid = false;
 }
-const postCodeRegex = /^\d{5}$/; 
-if (!postCodeRegex.test(orderPostCode.value)) {
-  orderPostCode.classList.add('is-invalid');
+const zipCodeRegex = /^\d{5}$/; 
+if (!zipCodeRegex.test(orderZipCode.value)) {
+  orderZipCode.classList.add('is-invalid');
   valid = false;
  }
  if (orderCity.value.trim().length < 2 || orderCity.value.trim().length > 50) {
@@ -158,8 +158,8 @@ if (valid) {
     orderName: orderName.value.trim(),
     orderEmail: orderEmail.value.trim(),
     orderPhone: orderPhone.value.trim(),
-    orderAddress: orderAddress.value.trim(),
-    orderPostCode: orderPostCode.value.trim(),
+    orderStreet: orderStreet.value.trim(),
+    orderZipCode: orderZipCode.value.trim(),
     orderCity: orderCity.value.trim()
   };
 
