@@ -105,9 +105,11 @@ const orderName = document.getElementById('orderName');
 const orderEmail = document.getElementById('orderEmail');
 const orderPhone = document.getElementById('orderPhone');
 const orderAddress = document.getElementById('orderAddress');
+const orderPostCode = document.getElementById('orderPostCode');
+const orderCity = document.getElementById('orderCity');
 
 // Tar bort tidigare felmarkeringar
-[orderName, orderEmail, orderPhone, orderAddress].forEach(input => {
+[orderName, orderEmail, orderPhone, orderAddress, orderPostCode,orderCity].forEach(input => {
  input.classList.remove('is-invalid');
 });
 
@@ -129,6 +131,15 @@ if (orderAddress.value.trim().length < 2 || orderAddress.value.trim().length > 5
  orderAddress.classList.add('is-invalid');
  valid = false;
 }
+const postCodeRegex = /^\d{5}$/; 
+if (!postCodeRegex.test(orderPostCode.value)) {
+  orderPostCode.classList.add('is-invalid');
+  valid = false;
+ }
+ if (orderCity.value.trim().length < 2 || orderCity.value.trim().length > 50) {
+  orderCity.classList.add('is-invalid');
+  valid = false;
+ }
 
 if (valid) {
  
@@ -147,7 +158,9 @@ if (valid) {
     orderName: orderName.value.trim(),
     orderEmail: orderEmail.value.trim(),
     orderPhone: orderPhone.value.trim(),
-    orderAddress: orderAddress.value.trim()
+    orderAddress: orderAddress.value.trim(),
+    orderPostCode: orderPostCode.value.trim(),
+    orderCity: orderCity.value.trim()
   };
 
   // Sparar datan i sessionStorage (datan finns kvar tills fliken stängs)

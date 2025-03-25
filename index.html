@@ -186,10 +186,20 @@
               <div class="invalid-feedback">Ange ett giltigt telefonnummer (max 50 tecken).</div>
             </div>
             <div class="mb-3">
-              <label for="orderAddress" class="form-label">Leveransadress</label>
+              <label for="orderAddress" class="form-label">Gatuadress</label>
               <input type="text" class="form-control" id="orderAddress" required>
-              <div class="invalid-feedback">Ange en adress mellan 2 och 50 tecken.</div>
+              <div class="invalid-feedback">Ange en gatuadress mellan 2 och 50 tecken.</div>
             </div>
+            <div class="mb-3">
+                <label for="orderPostCode" class="form-label">Postnummer</label>
+                <input type="text" class="form-control" id="orderPostCode" required>
+                <div class="invalid-feedback">Måste vara exakt 5 siffror</div>
+              </div>
+              <div class="mb-3">
+                <label for="orderCity" class="form-label">Ort</label>
+                <input type="text" class="form-control" id="orderCity" required>
+                <div class="invalid-feedback">Ange en ort mellan 2 och 50 tecken.</div>
+              </div>
           </form>
         </div>
         <div class="modal-footer">
