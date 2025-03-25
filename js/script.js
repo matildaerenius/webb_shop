@@ -46,7 +46,7 @@ async function loadProducts() {
                </div>
              </div>
              <div class="p-2 mt-auto">
-               <button type="button" class="btn btn-yellow order-button" 
+               <button type="button" class="btn btn-yellow order-button w-100" 
                  data-bs-toggle="modal" 
                  data-bs-target="#orderProductModal"
                  data-product-id="${product.id}"
@@ -54,7 +54,7 @@ async function loadProducts() {
                  data-product-price="${product.price}"
                  data-product-image="${product.image}"
                  data-product-description="${product.description}">
-                 Köp
+                 Buy
                </button>
              </div>
            </div>
@@ -179,12 +179,6 @@ if (valid) {
 });
 
   
-
-
-
-/*fetch('https://fakestoreapi.com/products')
-  .then(response => response.json())
-  .then(data => console.log(data)); */
 
 
   
